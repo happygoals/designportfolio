@@ -18,7 +18,7 @@ const BannerModule = ({ children, title, subTitle, price, enquire }) => {
           <StaticImage
             className="banner__image"
             imgClassName="banner__image--content"
-            src="../../../static/haemin_041120.jpeg"
+            src="../../../static/seasunset.jpeg"
             alt="Banner Image"
             layout="fullWidth"
             placeholder="blurred"
@@ -36,20 +36,21 @@ const BannerModule = ({ children, title, subTitle, price, enquire }) => {
             {subTitle && <h2>{subTitle}</h2>}
             {price && (
               <h2 className="price">
-                £{price}
+                {price}
                 <span style={{ color: "var(--primary)" }}>.</span>
               </h2>
             )}
             <div className="banner__btns">
-              {enquire && (
+              {/* {enquire && (
                 <Button
                   className="btn"
                   text="Enquire Now"
                   as={Link}
                   to="/about"
                 />
-              )}
-              <Button onClick={scrollToArea} text="Learn More About Me" />
+              )} */}
+              <Button className="btn" as={Link} to="/products" text="Go back to Project" />
+
             </div>
           </div>
         </div>

@@ -17,22 +17,20 @@ const Index = () => {
           title="From computer science to design"
           subTitle="I create harmony between humans and products."
         />
-        <BasicTextModule
-          title="A super-fast theme that is easy to get started, using the power of
-            GatsbyJS"
-          content="Using modern CSS properties such as grid, this theme is optmised for
-            speed and mobile devices. Giving users an excellent experience on
-            any device. Future-proofing your product."
+        <Features
+          title="Highlighted Projects"
+          introduction="Haemin is interested in Accessability, Sustainability, and Virtual Reality."
+        />
+        {/* <BasicTextModule
+          title="Hello. I'm Haemin Ryu, an HCI enthusiast living in Fort Wayne, IN, USA."
+          content="People are the reason behind everything I do. 
+          I love thinking about changes to make the user experience and human life better."
           link="/products"
           linkText="View Projects"
-        />
+        /> */}
         {/* <PerksModule>
           <Perk title="The Title" content="The content" />
         </PerksModule> */}
-        <Features
-          title="Featured Products from Barcadia."
-          introduction="Vivamus quam mauris, pulvinar vel mauris id, interdum semper neque. Proin malesuada libero eget tellus scelerisque, id egestas tortor egestas."
-        />
         {/* <LatestPosts
           title="The Latest from Barcadia"
           introduction="Cras scelerisque, tellus sed gravida tincidunt, velit tellus blandit justo, nec viverra augue erat in erat. Maecenas iaculis sed purus non fringilla."
