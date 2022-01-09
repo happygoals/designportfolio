@@ -35,8 +35,8 @@ const Footer = () => {
         {allProduct.length > 0 && (
           <FooterMenuStyles className="footer__menu products__menu">
             <h5>
-              <Link to="/products">
-                All Products<span>.</span>
+              <Link to="/projects">
+                All Projects<span>.</span>
               </Link>
             </h5>
             <ul>

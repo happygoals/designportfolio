@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   --menuWidth: 100vw;
   --blockquote: 20px;
   --background: #1b1b1b;
-  --primary: #ffc400;
+  --primary: #29c5f6;
   --bodyColor: #afc2cb;
   --inActive: #555;
   --letterSpacing: -0.075rem;

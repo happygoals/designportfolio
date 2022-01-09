@@ -18,7 +18,7 @@ const BannerModule = ({ children, title, subTitle, price, enquire }) => {
           <StaticImage
             className="banner__image"
             imgClassName="banner__image--content"
-            src="../../../static/macbook-color.jpg"
+            src="../../../static/haemin_041120.jpeg"
             alt="Banner Image"
             layout="fullWidth"
             placeholder="blurred"
@@ -46,10 +46,10 @@ const BannerModule = ({ children, title, subTitle, price, enquire }) => {
                   className="btn"
                   text="Enquire Now"
                   as={Link}
-                  to="/contact"
+                  to="/about"
                 />
               )}
-              <Button onClick={scrollToArea} text="Learn More" />
+              <Button onClick={scrollToArea} text="Learn More About Me" />
             </div>
           </div>
         </div>

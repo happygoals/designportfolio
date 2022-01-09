@@ -14,8 +14,8 @@ const Index = () => {
       <Seo title="Home" />
       <Layout>
         <BannerModule
-          title="Haemin"
-          subTitle="Using a combination of Gatsby and Contentful, Barcadia is ready to deploy and simple to use."
+          title="From computer science to design"
+          subTitle="I create harmony between humans and products."
         />
         <BasicTextModule
           title="A super-fast theme that is easy to get started, using the power of
@@ -24,19 +24,19 @@ const Index = () => {
             speed and mobile devices. Giving users an excellent experience on
             any device. Future-proofing your product."
           link="/products"
-          linkText="View Products"
+          linkText="View Projects"
         />
-        <PerksModule>
+        {/* <PerksModule>
           <Perk title="The Title" content="The content" />
-        </PerksModule>
+        </PerksModule> */}
         <Features
           title="Featured Products from Barcadia."
           introduction="Vivamus quam mauris, pulvinar vel mauris id, interdum semper neque. Proin malesuada libero eget tellus scelerisque, id egestas tortor egestas."
         />
-        <LatestPosts
+        {/* <LatestPosts
           title="The Latest from Barcadia"
           introduction="Cras scelerisque, tellus sed gravida tincidunt, velit tellus blandit justo, nec viverra augue erat in erat. Maecenas iaculis sed purus non fringilla."
-        />
+        /> */}
       </Layout>
     </>
   )

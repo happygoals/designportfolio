@@ -81,19 +81,7 @@ const NavModule = () => {
         className="menu"
       >
         <NavTopLevel>
-          {menuItems.map((item, index) => (
-            <li key={index}>
-              <Link
-                onClick={toggleNav}
-                onKeyDown={toggleNav}
-                to={item.path}
-                activeClassName="menu__item--active"
-              >
-                {item.text}
-                <span>.</span>
-              </Link>
-            </li>
-          ))}
+          
           {featuredProduct && (
             <li className={subNavIsOpen ? "open" : "closed"}>
               <button
@@ -101,7 +89,7 @@ const NavModule = () => {
                 onClick={toggleSubNav}
                 onKeyDown={toggleSubNav}
               >
-                Products<span>.</span>
+                Projects<span>.</span>
                 <Chevron />
               </button>
 
@@ -116,7 +104,7 @@ const NavModule = () => {
                     onKeyDown={toggleNav}
                     to="/products"
                   >
-                    All Products<span>.</span>
+                    All Projects<span>.</span>
                   </Link>
                 </li>
                 <hr />
@@ -138,6 +126,19 @@ const NavModule = () => {
               </SubNavStyles>
             </li>
           )}
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                onClick={toggleNav}
+                onKeyDown={toggleNav}
+                to={item.path}
+                activeClassName="menu__item--active"
+              >
+                {item.text}
+                <span>.</span>
+              </Link>
+            </li>
+          ))}
         </NavTopLevel>
       </motion.div>
     </NavModuleStyles>
