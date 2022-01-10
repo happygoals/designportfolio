@@ -49,5 +49,8 @@
   },
   "bugs": {
     "url": "https://github.com/bagseye/barcadia/issues"
+  },
+  "resolutions": {
+    "@babel/plugin-transform-spread": "^7.16.1"
   }
 }
