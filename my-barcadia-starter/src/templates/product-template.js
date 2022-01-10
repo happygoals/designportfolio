@@ -6,6 +6,8 @@ import styled from "styled-components"
 import BannerModule from "../components/BannerModule/BannerModule"
 import Faq from "../components/Faq/Faq"
 import Features from "../components/Features/Features"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+
 
 const ProductTemplateStyles = styled.div`
   .container {
@@ -72,12 +74,17 @@ const Producttemplate = (contentfulProduct) => {
     headerImage,
     title,
     price,
+    date,
     introduction,
     description,
+    singleimage,
+    richDescription,
     faqs,
     gallery,
   } = contentfulProduct
   const productHeaderImage = getImage(headerImage)
+  const productSingleImage = getImage(singleimage)
+  
   return (
     <>
       <Seo title={title} />
@@ -85,13 +92,14 @@ const Producttemplate = (contentfulProduct) => {
         title={title}
         price={price}
         subTitle={introduction}
-        enquire={true}
+        date={date}
+        // enquire={true}
       >
-        <GatsbyImage
-          className="banner__image"
-          image={productHeaderImage}
-          alt={title}
-        />
+      <GatsbyImage
+        className="banner__image"
+        image={productHeaderImage}
+        alt={title}
+      />
       </BannerModule>
       <ProductTemplateStyles className="section">
         <div className="container container__tight">
@@ -112,7 +120,17 @@ const Producttemplate = (contentfulProduct) => {
             </div>
           )}
         </div>
+        <div className="container container__tight">
+          {richDescription && (
+              <div className="column">{renderRichText(richDescription)}</div>
+            )}
+        </div>
       </ProductTemplateStyles>
+      <GatsbyImage
+          className="banner__image"
+          image={productSingleImage}
+          alt={title}
+        />
       {gallery && (
         <ProductGallery className="section">
           <div className="container container__tight">

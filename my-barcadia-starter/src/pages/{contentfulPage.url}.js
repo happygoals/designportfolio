@@ -35,6 +35,7 @@ export const data = graphql`
       mainContent {
         raw
       }
+      
     }
   }
 `

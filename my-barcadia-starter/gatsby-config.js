@@ -44,5 +44,17 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
+    {
+      resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+      options: {
+        renderOptions: {
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: node => {
+              return `<img src="${node.data.target.fields.file['en-US'].url}" />`
+            }
+          },
+        },
+      },
+    },
   ],
 }

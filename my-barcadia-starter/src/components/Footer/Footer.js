@@ -57,12 +57,12 @@ const Footer = () => {
         )}
 
         {siteMeta.twitterUsername ||
-        siteMeta.facebookUsername ||
+        siteMeta.linkedinUsername ||
         siteMeta.instagramUsername ||
-        siteMeta.linkedinUsername ? (
+        siteMeta.facebookUsername ? (
           <FooterMenuStyles className="footer__menu social__menu">
             <h5>
-              Follow Haemin Ryu<span>.</span>
+              Follow me<span>.</span>
             </h5>
             <ul>
               {siteMeta.twitterUsername && (
@@ -76,14 +76,14 @@ const Footer = () => {
                   </a>
                 </li>
               )}
-              {siteMeta.facebookUsername && (
+              {siteMeta.linkedinUsername && (
                 <li>
                   <a
-                    href={`https://www.facebook.com/${siteMeta.facebookUsername}`}
+                    href={`https://www.linkedin.com/${siteMeta.linkedinUsername}`}
                     target="_blank"
                     rel="nofollow noreferrer noopener"
                   >
-                    <Facebook />
+                    <Linkedin />
                   </a>
                 </li>
               )}
@@ -98,14 +98,14 @@ const Footer = () => {
                   </a>
                 </li>
               )}
-              {siteMeta.linkedinUsername && (
+              {siteMeta.facebookUsername && (
                 <li>
                   <a
-                    href={`https://www.linkedin.com/${siteMeta.linkedinUsername}`}
+                    href={`https://www.facebook.com/${siteMeta.facebookUsername}`}
                     target="_blank"
                     rel="nofollow noreferrer noopener"
                   >
-                    <Linkedin />
+                    <Facebook />
                   </a>
                 </li>
               )}

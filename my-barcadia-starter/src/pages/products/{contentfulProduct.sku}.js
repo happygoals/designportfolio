@@ -21,6 +21,7 @@ export const data = graphql`
       title
       introduction
       price
+      date
       headerImage {
         gatsbyImageData(
           width: 2000
@@ -31,6 +32,16 @@ export const data = graphql`
       description {
         raw
       }
+      richDescription {
+        raw
+      }
+      singleimage {
+        gatsbyImageData(
+          width: 500
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
       faqs {
         question
         answer {
@@ -39,7 +50,7 @@ export const data = graphql`
       }
       gallery {
         gatsbyImageData(
-          width: 1000
+          width: 1500
           placeholder: BLURRED
           formats: [AUTO, WEBP, AVIF]
         )

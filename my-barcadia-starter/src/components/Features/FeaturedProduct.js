@@ -14,7 +14,7 @@ const FeaturedProduct = ({ feature }) => {
         <GatsbyImage
           className="features__item--img"
           image={image}
-          alt="Product Image"
+          alt="Project Image"
         />
         {title && introduction && (
           <div className="features__item--content">

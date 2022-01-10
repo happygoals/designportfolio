@@ -15,9 +15,19 @@ const useAllProduct = () => {
           description {
             raw
           }
+          richDescription {
+            raw
+          }
           headerImage {
             gatsbyImageData(
               width: 1000
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+          singleimage {
+            gatsbyImageData(
+              width: 500
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )

@@ -4,13 +4,17 @@ export const menuItems = [
     text: "home",
   },
   {
-    path: "/projects",
-    text: "projects",
+    path: "/about",
+    text: "about",
   },
   {
-    path: "/blogs",
-    text: "blog",
+    path: "/products",
+    text: "projects",
   },
+  // {
+  //   path: "/blogs",
+  //   text: "blog",
+  // },
   {
     path: "/contact",
     text: "contact",
