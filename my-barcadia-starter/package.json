@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@babel/plugin-transform-spread": "7.12.1",
     "@contentful/rich-text-react-renderer": "^15.10.1",
     "@contentful/rich-text-types": "^15.10.1",
     "@fontsource/heebo": "^4.5.2",

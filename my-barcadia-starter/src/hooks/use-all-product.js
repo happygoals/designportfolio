@@ -12,6 +12,7 @@ const useAllProduct = () => {
           introduction
           sku
           price
+          date (formatString: "DD MMMM, YYYY")
           description {
             raw
           }
