@@ -66,8 +66,8 @@ const NavModule = () => {
           {title && (
             <LogoStyles>
               <Link to="/">
+                <span>'ㅒ    </span>
                 {title}
-                <span>.</span>
               </Link>
             </LogoStyles>
           )}

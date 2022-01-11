@@ -146,7 +146,7 @@ const Producttemplate = (contentfulProduct) => {
       )}
       <Features
         title="Highlighted Projects"
-        introduction="Haemin is interested in Interactive Tools, Accessability, and Healthcare."
+        introduction="Haemin is interested in Creative Tools, Accessability, Healthcare, and Digital Products."
       />
     </>
   )
