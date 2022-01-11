@@ -4,7 +4,7 @@ import MenuContext from "../MenuContext"
 import { motion } from "framer-motion"
 import { menuItems } from "./NavConstants"
 import { UseSiteMetadata } from "../../hooks/useSiteMetadata"
-import useFeaturedProduct from "../../hooks/use-featured-product"
+import useAllProduct from "../../hooks/use-all-product"
 import { FiChevronDown as Chevron } from "react-icons/fi"
 import {
   NavModuleStyles,
@@ -22,7 +22,7 @@ import {
 } from "./NavAnim"
 
 const NavModule = () => {
-  const featuredProduct = useFeaturedProduct()
+  const featuredProduct = useAllProduct()
 
   const [isOpen, setNav] = useContext(MenuContext)
   const [subNavIsOpen, setSubNav] = useState(false)
@@ -81,7 +81,19 @@ const NavModule = () => {
         className="menu"
       >
         <NavTopLevel>
-          
+        {menuItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                onClick={toggleNav}
+                onKeyDown={toggleNav}
+                to={item.path}
+                activeClassName="menu__item--active"
+              >
+                {item.text}
+                <span>.</span>
+              </Link>
+            </li>
+          ))}
           {featuredProduct && (
             <li className={subNavIsOpen ? "open" : "closed"}>
               <button
@@ -126,19 +138,6 @@ const NavModule = () => {
               </SubNavStyles>
             </li>
           )}
-          {menuItems.map((item, index) => (
-            <li key={index}>
-              <Link
-                onClick={toggleNav}
-                onKeyDown={toggleNav}
-                to={item.path}
-                activeClassName="menu__item--active"
-              >
-                {item.text}
-                <span>.</span>
-              </Link>
-            </li>
-          ))}
         </NavTopLevel>
       </motion.div>
     </NavModuleStyles>

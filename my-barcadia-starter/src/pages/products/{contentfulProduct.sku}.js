@@ -22,6 +22,7 @@ export const data = graphql`
       introduction
       price
       date
+      dateEnd
       headerImage {
         gatsbyImageData(
           width: 2000

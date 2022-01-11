@@ -12,7 +12,8 @@ const useAllProduct = () => {
           introduction
           sku
           price
-          date (formatString: "DD MMMM, YYYY")
+          date(formatString: "MMMM, YYYY")
+          dateEnd(formatString: "MMMM, YYYY")
           description {
             raw
           }
@@ -28,7 +29,7 @@ const useAllProduct = () => {
           }
           singleimage {
             gatsbyImageData(
-              width: 500
+              width: 700
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )

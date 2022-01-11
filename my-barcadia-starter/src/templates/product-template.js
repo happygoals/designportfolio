@@ -75,6 +75,7 @@ const Producttemplate = (contentfulProduct) => {
     title,
     price,
     date,
+    dateEnd,
     introduction,
     description,
     singleimage,
@@ -93,6 +94,7 @@ const Producttemplate = (contentfulProduct) => {
         price={price}
         subTitle={introduction}
         date={date}
+        dateEnd={dateEnd}
         // enquire={true}
       >
       <GatsbyImage
@@ -103,23 +105,23 @@ const Producttemplate = (contentfulProduct) => {
       </BannerModule>
       <ProductTemplateStyles className="section">
         <div className="container container__tight">
-          {description && (
-            <div className="column">{renderRichText(description)}</div>
-          )}
-          {faqs && (
-            <div className="column">
-              {faqs.map((item, index) => {
-                return (
-                  <Faq
-                    key={index}
-                    title={item.question}
-                    description={item.answer}
-                  />
-                )
-              })}
-            </div>
-          )}
-        </div>
+              {faqs && (
+                  <div>
+                    {faqs.map((item, index) => {
+                      return (
+                        <Faq
+                          key={index}
+                          title={item.question}
+                          description={item.answer}
+                        />
+                      )
+                    })}
+              </div> 
+              )}
+              {description && (
+                <div>{renderRichText(description)}</div>
+              )}
+          </div>
         <div className="container container__tight">
           {richDescription && (
               <div className="column">{renderRichText(richDescription)}</div>
@@ -127,9 +129,10 @@ const Producttemplate = (contentfulProduct) => {
         </div>
       </ProductTemplateStyles>
       <GatsbyImage
-          className="banner__image"
+          className="banner__image_single"
           image={productSingleImage}
           alt={title}
+          style={{ marginLeft: "100px", marginRight: "100px" }}
         />
       {gallery && (
         <ProductGallery className="section">
@@ -142,8 +145,8 @@ const Producttemplate = (contentfulProduct) => {
         </ProductGallery>
       )}
       <Features
-        title="Featured Projects"
-        introduction="Vivamus quam mauris, pulvinar vel mauris id, interdum semper neque. Proin malesuada libero eget tellus scelerisque, id egestas tortor egestas."
+        title="Highlighted Projects"
+        introduction="Haemin is interested in Interactive Tools, Accessability, and Healthcare."
       />
     </>
   )

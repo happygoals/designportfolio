@@ -19,7 +19,7 @@ const Index = () => {
         />
         <Features
           title="Highlighted Projects"
-          introduction="Haemin is interested in Accessability, Sustainability, and Virtual Reality."
+          introduction="Haemin is interested in Interactive Tools, Accessability, and Healthcare."
         />
         {/* <BasicTextModule
           title="Hello. I'm Haemin Ryu, an HCI enthusiast living in Fort Wayne, IN, USA."

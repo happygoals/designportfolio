@@ -22,6 +22,16 @@ export const BannerModuleStyles = styled.section`
     z-index: 1;
   }
 
+  .banner__image_single {
+    position: relative;
+    top: 0;
+    margin-left: 200;
+    width: 100%;
+    height: 100%;
+    gap: var(--gap);
+    z-index: 1;
+  }
+
   .gradient {
     background: radial-gradient(
       at bottom left,
