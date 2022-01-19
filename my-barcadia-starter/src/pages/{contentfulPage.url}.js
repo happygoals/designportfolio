@@ -34,8 +34,7 @@ export const data = graphql`
       feedType
       mainContent {
         raw
-      }
-      
+      }      
     }
   }
 `
