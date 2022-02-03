@@ -14,9 +14,6 @@ const useAllProduct = () => {
           price
           date(formatString: "MMMM, YYYY")
           dateEnd(formatString: "MMMM, YYYY")
-          description {
-            raw
-          }
           richDescription {
             raw
           }
@@ -27,13 +24,7 @@ const useAllProduct = () => {
               formats: [AUTO, WEBP, AVIF]
             )
           }
-          singleimage {
-            gatsbyImageData(
-              width: 700
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
+          
         }
       }
     }

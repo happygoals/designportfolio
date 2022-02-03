@@ -30,9 +30,6 @@ export const data = graphql`
           formats: [AUTO, WEBP, AVIF]
         )
       }
-      description {
-        raw
-      }
       richDescription {
         raw
         references {
@@ -42,13 +39,6 @@ export const data = graphql`
             gatsbyImageData
           }
         }
-      }
-      singleimage {
-        gatsbyImageData(
-          width: 500
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
-        )
       }
       faqs {
         question

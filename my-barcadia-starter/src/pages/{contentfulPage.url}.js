@@ -31,6 +31,13 @@ export const data = graphql`
           formats: [AUTO, WEBP, AVIF]
         )
       }
+      images {
+        gatsbyImageData(
+          width: 500
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
       feedType
       mainContent {
         raw

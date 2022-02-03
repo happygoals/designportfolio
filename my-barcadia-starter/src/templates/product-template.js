@@ -6,10 +6,10 @@ import styled from "styled-components"
 import BannerModule from "../components/BannerModule/BannerModule"
 import Faq from "../components/Faq/Faq"
 import Features from "../components/Features/Features"
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 
 const ProductTemplateStyles = styled.div`
+
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -68,30 +68,41 @@ const ProductGallery = styled.section`
     }
   }
 `
+const Bold = ({ children }) => <span style={{fontWeight: "bold"}}>{children}</span>
+const Text = ({ children }) => <p style={{whiteSpace: "pre-wrap"}}>{children}</p>;
+
 const RICHTEXT_OPTIONS = {
+  renderMark: {
+    [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+  },
   renderNode:{
     [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
     [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
     [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
     [BLOCKS.HEADING_4]: (node, children) => <h4>{children}</h4>,
     [BLOCKS.HEADING_5]: (node, children) => <h5>{children}</h5>,
-    [BLOCKS.PARAGRAPH]: (node, children) => {
-      return <p>{children}</p>
-    },
+    [BLOCKS.HEADING_6]: (node, children) => <h6>{children}</h6>,
+    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
+    [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
+    [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+    [BLOCKS.QUOTE]: (node, children) => <blockquote>{children}</blockquote>,
     "embedded-asset-block": node => {
-      const { gatsbyImageDataURL } = node.data.target.gatsbyImageData.images.fallback.src;
+   //   const { gatsbyImageDataURL } = node.data.target.gatsbyImageData.images.fallback.src;
       console.log(node.data.target.gatsbyImageData
         );
-      // if (!gatsbyImageDataURL) {
-      //   // asset is not an image
-      //   return null
-      // }
+      if (node.data.target.gatsbyImageData == null) {
+        // asset is not an image
+        return null
+      }
+      else{
+            return <img 
+            src={node.data.target.gatsbyImageData.images.fallback.src}
+            width={node.data.target.gatsbyImageData.width/2}
+            height={node.data.target.gatsbyImageData.height/2}
+        />
+      }
       //  return <GatsbyImage image={getImage(gatsbyImageDataURL)} />
-      return <img 
-          src={node.data.target.gatsbyImageData.images.fallback.src}
-          width={node.data.target.gatsbyImageData.width}
-          height={node.data.target.gatsbyImageData.height}
-      />
     },
     [INLINES.HYPERLINK]: (node) => {
         if (node.data.uri.includes("https://www.youtube.com/watch")) {
@@ -118,8 +129,11 @@ const RICHTEXT_OPTIONS = {
     // [INLINES.HYPERLINK]: (node, children) => {
     //   return <a href={node.data.uri}>{children}</a>
     // }
-  }
+  },
+  renderText: text =>
+      text.split("\n").flatMap((text, i) => [i > 0 && <br />, text])
 }
+
 
 const Producttemplate = (contentfulProduct) => {
   const {
@@ -129,14 +143,14 @@ const Producttemplate = (contentfulProduct) => {
     date,
     dateEnd,
     introduction,
-    description,
-    singleimage,
+    // description,
+    // singleimage,
     richDescription,
     faqs,
     gallery,
   } = contentfulProduct
   const productHeaderImage = getImage(headerImage)
-  const productSingleImage = getImage(singleimage)
+  //const productSingleImage = getImage(singleimage)
 
   return (
     <>
@@ -170,24 +184,21 @@ const Producttemplate = (contentfulProduct) => {
               })}
             </div>
           )}
-          {description && (
+          {/* {description && (
             <div>{renderRichText(description)}</div>
-          )}
+          )} */}
         </div>
         <div className="container container__tight">
         {/* {documentToReactComponents(RICHTEXT_OPTIONS)} */}
         {richDescription && renderRichText(richDescription, RICHTEXT_OPTIONS)}
-          {/* {richDescription && (
-            <div className="column">{renderRichText(richDescription)}</div>
-          )} */}
         </div>
       </ProductTemplateStyles>
-      <GatsbyImage
+      {/* <GatsbyImage
         className="banner__image_single"
         image={productSingleImage}
         alt={title}
         style={{ marginLeft: "100px", marginRight: "100px" }}
-      />
+      /> */}
       {gallery && (
         <ProductGallery className="section">
           <div className="container container__tight">
